@@ -28,7 +28,8 @@ def write_laps(mylaps, lap_count):
         fieldnames = ["time", "lat", "long", "throttle"]
         lap_log = csv.DictWriter(file, fieldnames)
         lap_log.writeheader()
-        lap_log.writerows(mylaps)    
+        lap_log.writerows(mylaps)   
+
 
 def find_lap_times():
     # Adjust lap detection by ensuring a minimum separation between detections
@@ -102,6 +103,7 @@ def get_color(throttle_pos):
         return (1, 0, 0, throttle_pos / 100)  # Red intensity based on throttle
     else:
         return (0.5, 0.5, 0.5, 1)  # Grey for coasting
+    
 
 def plot_lap(lap_data, lap_num):
     fig, ax = plt.subplots()
@@ -118,6 +120,7 @@ def plot_lap(lap_data, lap_num):
     plt.savefig(f"lap {lap_num}")
     plt.close()
 
+
 def latlon_to_meters(lat, lon, lat_ref, lon_ref):
     """ Convert GPS coordinates to local meters using geopy. """
     east = geodesic((lat_ref, lon_ref), (lat_ref, lon)).meters  # Longitude distance
@@ -127,6 +130,7 @@ def latlon_to_meters(lat, lon, lat_ref, lon_ref):
     if lat < lat_ref:
         north = -north  # Adjust for southward movement
     return (east, north)
+
 
 for i in range(find_lap_times()[0] + 1):
 
