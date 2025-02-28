@@ -1,0 +1,37 @@
+from sqlalchemy import Column, Integer, REAL
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
+
+
+class Telemetry(Base):
+    __tablename__ = "U_of_T_2024"
+    id = Column(Integer, primary_key=True, index=True)
+    Time = Column(REAL)
+    GPS_Speed = Column(REAL)
+    GPS_Nsat = Column(Integer)
+    GPS_LatAcc = Column(REAL)
+    GPS_LonAcc = Column(REAL)
+    GPS_Slope = Column(REAL)
+    GPS_Heading = Column(REAL)
+    GPS_Gyro = Column(REAL)
+    GPS_Altitude = Column(REAL)
+    GPS_PosAccuracy = Column(REAL)
+    GPS_SpdAccuracy = Column(REAL)
+    GPS_Radius = Column(REAL)
+    GPS_Latitude = Column(REAL)
+    GPS_Longitude = Column(REAL)
+    FL_Shock = Column(REAL)
+    FR_Shock = Column(REAL)
+    BrakePressFront = Column(REAL)
+    BrakePressRear = Column(REAL)
+    Steering_AnglRaw = Column(REAL)
+    InlineAcc = Column(REAL)
+    LateralAcc = Column(REAL)
+    VerticalAcc = Column(REAL)
+    RollRate = Column(REAL)
+    PitchRate = Column(REAL)
+    YawRate = Column(REAL)
+    SteeringAngle = Column(REAL)
+    BRK_PRESS_F = Column(REAL)
+    BRK_PRESS_R = Column(REAL)
+    ECU_THROTTLE = Column(REAL)
