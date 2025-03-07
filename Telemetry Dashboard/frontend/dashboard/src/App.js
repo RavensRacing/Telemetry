@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
-import ThrottleSpeedChart from './ExampleChart';
+import ThrottleSpeedChart from './ThrottleSpeed';
+//import SteeringAngle from './SteeringAngle';
+import { TelemetryDataProvider } from './DataProvider';
+import TractionCircle from './TractionCircle';
 
 function App() {
 
   return (
         <div className="App">
-          <h2>Throttle/Speed</h2>
-          <ThrottleSpeedChart />
+          <TelemetryDataProvider>
+            <ThrottleSpeedChart />
+            <TractionCircle />
+          </TelemetryDataProvider>
     </div>
   );
 }
