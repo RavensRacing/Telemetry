@@ -2,7 +2,7 @@ import React, {useContext } from "react";
 import { Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, ScatterChart } from "recharts";
 import { TelemetryDataContext } from "./DataProvider";
 
-const TractionCircle = () => {
+const RacingLine = () => {
 
     const { data, dataIsLoaded } = useContext(TelemetryDataContext);
 
@@ -16,16 +16,15 @@ const TractionCircle = () => {
     <div style={{ width: "100%", height: 1000 }}>
       <ResponsiveContainer>
         <ScatterChart>
-          <XAxis type="number" dataKey="vertical_acc" />
-          <YAxis type="number" dataKey="lateral_acc" />
+          <XAxis type="number" dataKey="gps_longitude" />
+          <YAxis type="number" dataKey="gps_latitude" domain={[44.491, 44.495]}/>
           <Tooltip />
-          <Scatter data={data} fill="green"/>
-          <circle cx={0} cy={0} r={1} fill="none" stroke="red" strokeWidth={2} />
+          <Scatter data={data} fill="red"/>
         </ScatterChart>
       </ResponsiveContainer>
     </div>
   );
 };
 
-export default TractionCircle;
+export default RacingLine;
   

@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import ThrottleSpeedChart from './ThrottleSpeed';
-//import SteeringAngle from './SteeringAngle';
-import { TelemetryDataProvider } from './DataProvider';
 import TractionCircle from './TractionCircle';
+import { TelemetryDataProvider } from './DataProvider';
+import RacingLine from './RacingLine';
 
 function App() {
 
@@ -11,7 +11,11 @@ function App() {
         <div className="App">
           <TelemetryDataProvider>
             <ThrottleSpeedChart />
-            <TractionCircle />
+            <div>
+              <TractionCircle />
+              <RacingLine />
+            </div>
+
           </TelemetryDataProvider>
     </div>
   );
